@@ -8,5 +8,5 @@ class SentenceIterator(object):
 
     def __iter__(self):
         for fname in os.listdir(self.dirname):
-            for sent in sent_tokenize(open(os.path.join(self.dirname, fname), 'r')):
+            for sent in sent_tokenize(open(os.path.join(self.dirname, fname),'r').read()):
                 yield word_tokenize(sent)
